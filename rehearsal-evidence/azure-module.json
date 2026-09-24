@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-24T05:18:00Z",
+  "checkedAt": "2026-09-24T05:50:00Z",
   "subscriptionId": "408de6dc-726d-4e63-87d3-ef5bbbb30d9e",
   "tenantId": "398a6654-997b-47e9-b12b-9515b896b4de",
   "permissionProbe": {
@@ -29,6 +29,33 @@
       "azdElapsedSeconds": 976,
       "acceptedForWorkshop": false,
       "reason": "The workaround deviated from the documented Container Apps/OIDC route and exceeded the facilitator guide's two-minute ripcord by more than eight times."
+    },
+    "boundedGitHubActionsFallback": {
+      "kind": "Azure Static Web Apps",
+      "workflowCommit": "e9809aae917e9d0df2fc3f9f48e5463065374858",
+      "runId": 35961396349,
+      "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35961396349",
+      "runConclusion": "success",
+      "runDurationSeconds": 81,
+      "exportedDogs": 100,
+      "endpoint": "https://mango-sky-0525a910f.2.azurestaticapps.net/",
+      "verifiedRoutes": {
+        "/": {
+          "status": 200,
+          "sha256": "77b9789caacbe861f8141a543d02a01237bc9c3d3ecfa7668a137a557b11b377"
+        },
+        "/about/": {
+          "status": 200,
+          "sha256": "257b77afffee63d08300394af2ddae4d9c68ad06999a85b2d8fdef257466fe7f"
+        },
+        "/dog/1/": {
+          "status": 200,
+          "sha256": "eb00363971bdd9f4101a3105fd42f1abcd2e3feaee541f6c416931c475fb44dd"
+        }
+      },
+      "authentication": "temporary Azure Static Web Apps deployment token stored only as a GitHub Actions secret",
+      "acceptedAsUpstreamEquivalent": false,
+      "divergence": "Static preview rather than the upstream azd/OIDC full-stack Container Apps deployment."
     }
   },
   "safeExistingIdentityInventory": {
@@ -44,24 +71,28 @@
     "temporaryResourceGroup": "rg-astone-pets-rehearsal-identity",
     "temporaryIdentity": "pets-workshop-rehearsal-oidc",
     "fallbackDeploymentResourceGroup": "rg-astone-pets-azd-e2e",
+    "staticFallbackResourceGroup": "rg-astone-pets-rehearsal-swa",
     "roleAssignmentsCreated": 0,
     "temporaryResourceGroupExistsAfterCleanup": false,
     "fallbackDeploymentResourceGroupExistsAfterCleanup": false,
+    "staticFallbackResourceGroupExistsAfterCleanup": false,
     "taggedResourcesRemaining": 0,
     "rehearsalManagedIdentitiesRemaining": 0,
     "rehearsalAppRegistrationsRemaining": 0,
     "sharedIdentityRehearsalFederatedCredentials": 0,
     "sharedIdentityModified": false,
-    "repositoryVariablesCreated": false,
-    "repositorySecretsCreated": false,
+    "repositoryVariablesCreated": true,
+    "repositorySecretsCreated": true,
+    "temporaryRepositoryVariable": "AZURE_STATIC_WEB_APP_URL",
+    "temporaryRepositorySecret": "AZURE_STATIC_WEB_APPS_API_TOKEN",
     "repositoryVariablesRemaining": 0,
     "repositorySecretsRemaining": 0,
     "preExistingDemoResourceGroupModified": false
   },
-  "status": "failed",
+  "status": "partial",
   "blockers": [
     "Microsoft Entra application registration privilege",
     "Microsoft.Authorization/roleAssignments/write privilege"
   ],
-  "conclusion": "The attendee-facing OIDC deployment could not run. The local App Service rescue path was over-engineered, too slow for the workshop, and did not produce a working frontend. All rehearsal-created Azure resources were deleted."
+  "conclusion": "The attendee-facing azd/OIDC full-stack deployment remained externally blocked. A bounded GitHub Actions fallback successfully deployed and verified the static application on Azure Static Web Apps, then its resource group, deployment token, repository variable, and isolated Azure profile were deleted. The green run is valid Azure deployment proof but not equivalent to the upstream Container Apps exercise."
 }
