@@ -1,98 +1,249 @@
 {
-  "checkedAt": "2026-09-24T05:50:00Z",
-  "subscriptionId": "408de6dc-726d-4e63-87d3-ef5bbbb30d9e",
-  "tenantId": "398a6654-997b-47e9-b12b-9515b896b4de",
-  "permissionProbe": {
-    "subscriptionMatched": true,
-    "tenantMatched": true,
-    "wildcardActionPresent": true,
-    "ordinaryResourceWritesAllowed": true,
-    "roleAssignmentsWriteAllowed": false,
-    "entraApplicationCreateAllowed": false
-  },
-  "azd": {
-    "version": "1.34.2",
-    "detectedServices": [
-      "app/client",
-      "app/server"
+  "checkedAt": "2026-09-24T06:33:33Z",
+  "status": "pass",
+  "successfulUpstreamDeployment": {
+    "subscriptionId": "2d63aa20-c132-4d37-b9ac-d1852d10ba55",
+    "subscriptionName": "Visual Studio Enterprise Subscription",
+    "tenantId": "a8d1c4d4-8a92-46c2-b538-1e07cd7e7173",
+    "signedInUser": "austenstone@live.com",
+    "verifiedPermissions": [
+      "Owner at subscription scope",
+      "User Access Administrator at tenant root",
+      "Microsoft Entra allowedToCreateApps=true"
     ],
-    "generatedAzureYaml": true,
-    "generatedBicep": true,
-    "bicepCompilationSucceeded": true,
-    "localPackageResult": "client built; server blocked by local pack/Docker API version mismatch",
-    "fallbackAttempt": {
-      "environmentName": "astone-pets-azd-e2e",
-      "resourceGroup": "rg-astone-pets-azd-e2e",
-      "deploymentName": "astone-pets-azd-e2e-1790224976",
-      "host": "App Service",
-      "azdUpResult": "infrastructure and API deployed; client returned HTTP 503 because the packaged site omitted dist/server/entry.mjs",
-      "azdElapsedSeconds": 976,
-      "acceptedForWorkshop": false,
-      "reason": "The workaround deviated from the documented Container Apps/OIDC route and exceeded the facilitator guide's two-minute ripcord by more than eight times."
+    "azdVersion": "1.34.2",
+    "environmentName": "astone-pets-oidc-20260923",
+    "location": "eastus2",
+    "resourceGroup": "rg-astone-pets-oidc-20260923",
+    "pipelineConfiguration": {
+      "command": "azd pipeline config -e astone-pets-oidc-20260923 --provider github --auth-type federated --principal-name github-actions-astone-pets-oidc-20260923 --remote-name origin",
+      "authenticationChoice": "Federated Service Principal (SP + OIDC)",
+      "federatedSubjectChoice": "Use detected subjects (Recommended)",
+      "automaticCommitPushChoice": "No",
+      "repositoryVariablesCreated": [
+        "AZURE_CLIENT_ID",
+        "AZURE_ENV_NAME",
+        "AZURE_LOCATION",
+        "AZURE_SUBSCRIPTION_ID",
+        "AZURE_TENANT_ID"
+      ],
+      "repositorySecretsCreated": []
     },
-    "boundedGitHubActionsFallback": {
-      "kind": "Azure Static Web Apps",
-      "workflowCommit": "e9809aae917e9d0df2fc3f9f48e5463065374858",
-      "runId": 35961396349,
-      "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35961396349",
-      "runConclusion": "success",
-      "runDurationSeconds": 81,
-      "exportedDogs": 100,
-      "endpoint": "https://mango-sky-0525a910f.2.azurestaticapps.net/",
-      "verifiedRoutes": {
-        "/": {
-          "status": 200,
-          "sha256": "77b9789caacbe861f8141a543d02a01237bc9c3d3ecfa7668a137a557b11b377"
+    "identity": {
+      "displayName": "github-actions-astone-pets-oidc-20260923",
+      "clientId": "fded5772-097a-48eb-a335-6e22c67be0cb",
+      "applicationObjectId": "c8915312-77d1-4f57-9b46-738e09f098ad",
+      "servicePrincipalObjectId": "83f6d730-7b5b-4562-a6fd-49367f7a83db",
+      "federatedCredentials": [
+        {
+          "id": "d8b8566e-8376-4395-bc79-5b1a5b44dbe2",
+          "subject": "repo:austenstone@22425467/pets-workshop-rehearsal-20260923@1384588910:ref:refs/heads/main"
         },
-        "/about/": {
-          "status": 200,
-          "sha256": "257b77afffee63d08300394af2ddae4d9c68ad06999a85b2d8fdef257466fe7f"
+        {
+          "id": "2aa9522e-1c89-4e70-8147-98c5884806ae",
+          "subject": "repo:austenstone@22425467/pets-workshop-rehearsal-20260923@1384588910:ref:refs/heads/austenstone-workshop-full-rehearsal"
         },
-        "/dog/1/": {
-          "status": 200,
-          "sha256": "eb00363971bdd9f4101a3105fd42f1abcd2e3feaee541f6c416931c475fb44dd"
+        {
+          "id": "d49381d7-5337-4c7f-9e86-18d890da34e4",
+          "subject": "repo:austenstone@22425467/pets-workshop-rehearsal-20260923@1384588910:pull_request"
         }
+      ],
+      "roleAssignments": [
+        {
+          "id": "429945c1-1e42-413a-a36d-af8c721d788d",
+          "role": "Contributor",
+          "scope": "/subscriptions/2d63aa20-c132-4d37-b9ac-d1852d10ba55"
+        },
+        {
+          "id": "f3e4db7e-b9d8-498e-af58-6912b0928e77",
+          "role": "User Access Administrator",
+          "scope": "/subscriptions/2d63aa20-c132-4d37-b9ac-d1852d10ba55"
+        }
+      ]
+    },
+    "workflow": {
+      "workflowCommit": "3c2692a390940f4092018faf024c54a526c2b4e5",
+      "ciRunId": 35963201398,
+      "ciRunUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35963201398",
+      "deploymentRunId": 35963285456,
+      "deploymentRunUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35963285456",
+      "event": "workflow_run",
+      "conclusion": "success",
+      "jobStartedAt": "2026-09-24T06:11:08Z",
+      "jobCompletedAt": "2026-09-24T06:15:26Z",
+      "jobDurationSeconds": 258,
+      "azdReportedDurationSeconds": 244,
+      "authentication": "azd auth login --federated-credential-provider github",
+      "setupAction": "Azure/setup-azd@v2",
+      "checkoutAction": "actions/checkout@v7",
+      "exactShaCheckout": true,
+      "checkoutCredentialsPersisted": false,
+      "inheritedSecrets": false
+    },
+    "deployment": {
+      "resourceTypes": {
+        "Microsoft.App/containerApps": 2,
+        "Microsoft.App/managedEnvironments": 1,
+        "Microsoft.ContainerRegistry/registries": 1,
+        "Microsoft.Insights/components": 1,
+        "Microsoft.ManagedIdentity/userAssignedIdentities": 2,
+        "Microsoft.OperationalInsights/workspaces": 1,
+        "Microsoft.Portal/dashboards": 1
       },
-      "authentication": "temporary Azure Static Web Apps deployment token stored only as a GitHub Actions secret",
-      "acceptedAsUpstreamEquivalent": false,
-      "divergence": "Static preview rather than the upstream azd/OIDC full-stack Container Apps deployment."
+      "client": {
+        "endpoint": "https://client.redcoast-90301e2b.eastus2.azurecontainerapps.io/",
+        "targetPort": 4321,
+        "rootStatus": 200,
+        "detailRoute": "/dog/1",
+        "detailStatus": 200,
+        "dogCardsOnFirstPage": 6,
+        "pagination": "Page 1 of 17",
+        "apiDataRendered": true,
+        "rootSha256": "69942a2f30b650f0441eb1e5d16ff3535e7423b52933fbdb57976e01cf6e2ea0",
+        "detailSha256": "ef6e73dd768c171d8a467cbb84a34005be99a4d1bbdf1170055238d71a083402"
+      },
+      "server": {
+        "endpoint": "https://server.redcoast-90301e2b.eastus2.azurecontainerapps.io/",
+        "targetPort": 80,
+        "dogsRoute": "/api/dogs?per_page=100",
+        "dogsStatus": 200,
+        "dogCount": 100,
+        "dogOneRoute": "/api/dogs/1",
+        "dogOneStatus": 200,
+        "dogOne": {
+          "id": 1,
+          "name": "Pepper",
+          "breed": "Labrador Retriever"
+        },
+        "dogsSha256": "684719fb885c1e8f6339616e0b306e165383bd6593149af53d9cdec82f145c3c"
+      }
     }
   },
-  "safeExistingIdentityInventory": {
-    "name": "actions-video-series-github-oidc",
-    "resourceGroup": "actions-video-series-demo",
-    "ownerTag": "austenstone",
-    "role": "Contributor",
-    "scope": "/subscriptions/408de6dc-726d-4e63-87d3-ef5bbbb30d9e/resourceGroups/actions-video-series-demo",
-    "usableForGeneratedAzdDeployment": false,
-    "reason": "Generated infrastructure creates ACR pull role assignments, which require Microsoft.Authorization/roleAssignments/write."
-  },
   "cleanup": {
-    "temporaryResourceGroup": "rg-astone-pets-rehearsal-identity",
-    "temporaryIdentity": "pets-workshop-rehearsal-oidc",
-    "fallbackDeploymentResourceGroup": "rg-astone-pets-azd-e2e",
-    "staticFallbackResourceGroup": "rg-astone-pets-rehearsal-swa",
-    "roleAssignmentsCreated": 0,
-    "temporaryResourceGroupExistsAfterCleanup": false,
-    "fallbackDeploymentResourceGroupExistsAfterCleanup": false,
-    "staticFallbackResourceGroupExistsAfterCleanup": false,
+    "azdDownCommand": "azd down -e astone-pets-oidc-20260923 --purge --force --no-prompt",
+    "azdDownDurationSeconds": 943,
+    "logAnalyticsPurged": true,
+    "resourceGroupExists": false,
     "taggedResourcesRemaining": 0,
-    "rehearsalManagedIdentitiesRemaining": 0,
-    "rehearsalAppRegistrationsRemaining": 0,
-    "sharedIdentityRehearsalFederatedCredentials": 0,
-    "sharedIdentityModified": false,
-    "repositoryVariablesCreated": true,
-    "repositorySecretsCreated": true,
-    "temporaryRepositoryVariable": "AZURE_STATIC_WEB_APP_URL",
-    "temporaryRepositorySecret": "AZURE_STATIC_WEB_APPS_API_TOKEN",
+    "applicationRegistrationsRemaining": 0,
+    "servicePrincipalsRemaining": 0,
+    "federatedCredentialsRemaining": 0,
+    "roleAssignmentsRemaining": 0,
     "repositoryVariablesRemaining": 0,
     "repositorySecretsRemaining": 0,
-    "preExistingDemoResourceGroupModified": false
+    "deploymentWorkflowState": "disabled_manually",
+    "localAzdEnvironmentRemoved": true,
+    "isolatedAzdAuthStateRemoved": true,
+    "sharedAzureCliProfileModifiedOrRemoved": false,
+    "unrelatedAzureResourcesModified": false
   },
-  "status": "partial",
-  "blockers": [
-    "Microsoft Entra application registration privilege",
-    "Microsoft.Authorization/roleAssignments/write privilege"
-  ],
-  "conclusion": "The attendee-facing azd/OIDC full-stack deployment remained externally blocked. A bounded GitHub Actions fallback successfully deployed and verified the static application on Azure Static Web Apps, then its resource group, deployment token, repository variable, and isolated Azure profile were deleted. The green run is valid Azure deployment proof but not equivalent to the upstream Container Apps exercise."
+  "attendeeInstructionsAudit": {
+    "moduleWorkedExactlyAsWritten": false,
+    "reason": "The upstream behavior succeeded, but the run required undocumented permission preconditions and current-CLI prompt choices, and it resumed from the later Module 08 reusable-workflow state.",
+    "actualCommands": [
+      "curl -fsSL https://aka.ms/install-azd.sh | bash -s -- --install-folder \"$HOME/.local/bin\"",
+      "azd auth login",
+      "azd env new astone-pets-oidc-20260923 --subscription 2d63aa20-c132-4d37-b9ac-d1852d10ba55 --location eastus2 --no-prompt",
+      "azd pipeline config -e astone-pets-oidc-20260923 --provider github --auth-type federated --principal-name github-actions-astone-pets-oidc-20260923 --remote-name origin",
+      "azd up --no-prompt",
+      "azd down -e astone-pets-oidc-20260923 --purge --force --no-prompt",
+      "azd env remove astone-pets-oidc-20260923 --force --no-prompt"
+    ],
+    "promptAnswers": [
+      "Federated Service Principal (SP + OIDC)",
+      "Use detected subjects (Recommended)",
+      "No to automatic commit and push"
+    ],
+    "generatedOrRequiredFiles": [
+      "azure.yaml",
+      "infra/main.bicep",
+      "infra/main.parameters.json",
+      "infra/resources.bicep",
+      "infra/abbreviations.json",
+      "infra/modules/fetch-container-image.bicep",
+      ".github/workflows/azure-dev.yml",
+      ".github/workflows/reusable-deploy.yml"
+    ],
+    "deviations": [
+      {
+        "category": "permissions",
+        "finding": "Contributor-like resource access was insufficient because pipeline configuration also creates Entra applications and subscription role assignments.",
+        "replacement": "Document Entra app-creation permission plus Owner and User Access Administrator, or a narrowly equivalent pre-provisioned identity path."
+      },
+      {
+        "category": "installation",
+        "finding": "The macOS installer defaults to privileged system locations and can require sudo.",
+        "replacement": "Document a non-sudo user-local install folder and PATH update."
+      },
+      {
+        "category": "authentication",
+        "finding": "Plain azd auth login opened a browser on macOS rather than the described device-code flow.",
+        "replacement": "Describe browser/device-code behavior as environment-dependent and require explicit account/subscription verification."
+      },
+      {
+        "category": "GitHub prerequisites",
+        "finding": "The guide assumes an authenticated writable origin and repository-variable administration.",
+        "replacement": "Add git remote get-url origin and gh auth status checks plus required repository permission."
+      },
+      {
+        "category": "current azd prompts",
+        "finding": "azd 1.34.2 defaulted to federated managed identity and added an undocumented FIC-subject prompt.",
+        "replacement": "Tell attendees to select Federated Service Principal and review detected main/branch/PR subjects."
+      },
+      {
+        "category": "workflow security",
+        "finding": "The standalone workflow does not pin checkout to the CI-tested workflow_run SHA and persists GitHub credentials.",
+        "replacement": "Verify same-repository/default-branch provenance, checkout workflow_run.head_sha, and set persist-credentials false."
+      },
+      {
+        "category": "actions versions",
+        "finding": "The guide uses actions/checkout@v4 while the rehearsal's current-major policy used v7.",
+        "replacement": "Keep workshop action-version policy explicit and update snippets consistently."
+      },
+      {
+        "category": "region and providers",
+        "finding": "The guide does not preflight Container Apps/ACR provider registration, supported regions, or quota.",
+        "replacement": "Add provider, regional availability, and quota checks before pipeline creation."
+      },
+      {
+        "category": "verification",
+        "finding": "The guide verifies only the client endpoint.",
+        "replacement": "Verify client root/detail pages and the Flask API payload, including rendered API data."
+      },
+      {
+        "category": "cleanup",
+        "finding": "The guide omits cleanup, and azd down does not remove pipeline identity, FIC, RBAC, or repository variables.",
+        "replacement": "Add azd down plus explicit identity/RBAC/variable deletion and zero-state checks."
+      },
+      {
+        "category": "later-module state",
+        "finding": "The successful run preserved Module 08's reusable caller rather than recreating the Module 06 standalone workflow.",
+        "replacement": "Treat this as behaviorally equivalent proof, not a byte-for-byte standalone replay."
+      }
+    ]
+  },
+  "historicalAttempts": {
+    "blockedSubscription": {
+      "subscriptionId": "408de6dc-726d-4e63-87d3-ef5bbbb30d9e",
+      "tenantId": "398a6654-997b-47e9-b12b-9515b896b4de",
+      "ordinaryResourceWritesAllowed": true,
+      "roleAssignmentsWriteAllowed": false,
+      "entraApplicationCreateAllowed": false
+    },
+    "rejectedAppServiceFallback": {
+      "resourceGroup": "rg-astone-pets-azd-e2e",
+      "elapsedSeconds": 976,
+      "result": "API deployed; client returned HTTP 503",
+      "accepted": false,
+      "cleanedUp": true
+    },
+    "boundedStaticWebAppsFallback": {
+      "runId": 35961396349,
+      "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35961396349",
+      "conclusion": "success",
+      "acceptedAsUpstreamEquivalent": false,
+      "cleanedUp": true
+    }
+  },
+  "conclusion": "The exact upstream azd/OIDC full-stack behavior passed on an isolated personal subscription. CI gated the deployment, GitHub OIDC authenticated without a stored credential, both Container Apps were independently verified, and all rehearsal-created Azure resources, identities, federated credentials, role assignments, repository variables, secrets, and local azd auth state were removed."
 }
