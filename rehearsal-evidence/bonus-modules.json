@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-09-24T05:21:00Z",
+  "artifactAttestation": {
+    "runId": 35958771845,
+    "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35958771845",
+    "commit": "97eb87518454204412febbe2a09e952550ff9720",
+    "artifact": "tailspin-client.tgz",
+    "sha256": "2bf6dabc042b6c424124767ec738e147b1649bbf7a6a50cddd25bde584c385d7",
+    "signerWorkflow": ".github/workflows/attest-tailspin-build.yml@refs/heads/main",
+    "runnerEnvironment": "github-hosted",
+    "rekorTimestamp": "2026-09-23T22:10:46-07:00",
+    "verificationSucceeded": true,
+    "tamperedArtifactRejected": true
+  },
+  "environmentGate": {
+    "runId": 35958870891,
+    "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35958870891",
+    "commit": "60c0be34144444d4c9d2936fc9246f099b2bbf2b",
+    "stagingCompletedAt": "2026-09-24T05:11:58Z",
+    "productionStartedAt": "2026-09-24T05:13:02Z",
+    "observedWaitSeconds": 64,
+    "reviewerActionRequired": false
+  },
+  "concurrency": {
+    "cancelStalePreview": {
+      "cancelledRunId": 35959025620,
+      "replacementRunId": 35959036830,
+      "cancelledRunUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35959025620",
+      "replacementRunUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35959036830",
+      "cancelledConclusion": "cancelled",
+      "replacementConclusion": "success"
+    },
+    "retainedProductionQueue": [
+      {
+        "runId": 35959333551,
+        "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35959333551",
+        "startedAt": "2026-09-24T05:18:12Z",
+        "completedAt": "2026-09-24T05:18:33Z",
+        "conclusion": "success"
+      },
+      {
+        "runId": 35959343024,
+        "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35959343024",
+        "startedAt": "2026-09-24T05:18:36Z",
+        "completedAt": "2026-09-24T05:18:58Z",
+        "conclusion": "success"
+      },
+      {
+        "runId": 35959345198,
+        "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35959345198",
+        "startedAt": "2026-09-24T05:19:01Z",
+        "completedAt": "2026-09-24T05:19:25Z",
+        "conclusion": "success"
+      }
+    ],
+    "queueWasStrictlySerialized": true
+  },
+  "pagesPreview": {
+    "runId": 35959471097,
+    "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35959471097",
+    "commit": "ca57fe7859319c9a3dc5b83a0b8e8cc6807226c5",
+    "url": "https://austenstone.github.io/pets-workshop-rehearsal-20260923/",
+    "buildType": "workflow",
+    "exportedDogs": 100,
+    "verifiedRoutes": [
+      "/",
+      "/about/",
+      "/dog/1/"
+    ],
+    "allDogRoutesChecked": 100,
+    "allDogRoutesStatus200": true,
+    "availableDogCardsOnHome": 12,
+    "projectBasePathVerified": true,
+    "faviconStatus": 200,
+    "previewNoticeVerified": true,
+    "dogCardVerified": true,
+    "deepLinkVerified": true
+  }
+}

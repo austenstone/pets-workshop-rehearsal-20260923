@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-24T04:31:00Z",
+  "checkedAt": "2026-09-24T05:18:00Z",
   "subscriptionId": "408de6dc-726d-4e63-87d3-ef5bbbb30d9e",
   "tenantId": "398a6654-997b-47e9-b12b-9515b896b4de",
   "permissionProbe": {
@@ -19,7 +19,17 @@
     "generatedAzureYaml": true,
     "generatedBicep": true,
     "bicepCompilationSucceeded": true,
-    "localPackageResult": "client built; server blocked by local pack/Docker API version mismatch"
+    "localPackageResult": "client built; server blocked by local pack/Docker API version mismatch",
+    "fallbackAttempt": {
+      "environmentName": "astone-pets-azd-e2e",
+      "resourceGroup": "rg-astone-pets-azd-e2e",
+      "deploymentName": "astone-pets-azd-e2e-1790224976",
+      "host": "App Service",
+      "azdUpResult": "infrastructure and API deployed; client returned HTTP 503 because the packaged site omitted dist/server/entry.mjs",
+      "azdElapsedSeconds": 976,
+      "acceptedForWorkshop": false,
+      "reason": "The workaround deviated from the documented Container Apps/OIDC route and exceeded the facilitator guide's two-minute ripcord by more than eight times."
+    }
   },
   "safeExistingIdentityInventory": {
     "name": "actions-video-series-github-oidc",
@@ -33,15 +43,25 @@
   "cleanup": {
     "temporaryResourceGroup": "rg-astone-pets-rehearsal-identity",
     "temporaryIdentity": "pets-workshop-rehearsal-oidc",
+    "fallbackDeploymentResourceGroup": "rg-astone-pets-azd-e2e",
     "roleAssignmentsCreated": 0,
     "temporaryResourceGroupExistsAfterCleanup": false,
+    "fallbackDeploymentResourceGroupExistsAfterCleanup": false,
+    "taggedResourcesRemaining": 0,
+    "rehearsalManagedIdentitiesRemaining": 0,
+    "rehearsalAppRegistrationsRemaining": 0,
+    "sharedIdentityRehearsalFederatedCredentials": 0,
     "sharedIdentityModified": false,
     "repositoryVariablesCreated": false,
-    "repositorySecretsCreated": false
+    "repositorySecretsCreated": false,
+    "repositoryVariablesRemaining": 0,
+    "repositorySecretsRemaining": 0,
+    "preExistingDemoResourceGroupModified": false
   },
-  "status": "blocked",
+  "status": "failed",
   "blockers": [
     "Microsoft Entra application registration privilege",
     "Microsoft.Authorization/roleAssignments/write privilege"
-  ]
+  ],
+  "conclusion": "The attendee-facing OIDC deployment could not run. The local App Service rescue path was over-engineered, too slow for the workshop, and did not produce a working frontend. All rehearsal-created Azure resources were deleted."
 }
