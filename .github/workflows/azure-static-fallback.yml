@@ -1,0 +1,74 @@
+name: Module 06 - Deploy Azure
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: Export SQLite snapshot
+        working-directory: app/client
+        run: python3 scripts/export-pages-data.py
+
+      - name: Install dependencies
+        working-directory: app/client
+        run: npm ci
+
+      - name: Build Azure preview
+        working-directory: app/client
+        env:
+          PAGES_SITE: ${{ vars.AZURE_STATIC_WEB_APP_URL }}
+          PAGES_BASE_PATH: /
+        run: npm run build:pages
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: app/client/dist-pages
+          output_location: ''
+          skip_app_build: true
+          skip_api_build: true
+
+      - name: Verify deployed application
+        env:
+          APP_URL: ${{ vars.AZURE_STATIC_WEB_APP_URL }}
+        run: |
+          curl --fail --silent --show-error \
+            --retry 10 --retry-delay 6 --retry-all-errors \
+            "${APP_URL}/" |
+            grep --quiet --fixed-strings 'Static workshop preview'
+          curl --fail --silent --show-error \
+            --retry 10 --retry-delay 6 --retry-all-errors \
+            "${APP_URL}/about/" |
+            grep --quiet --fixed-strings 'About'
+          curl --fail --silent --show-error \
+            --retry 10 --retry-delay 6 --retry-all-errors \
+            "${APP_URL}/dog/1/" |
+            grep --quiet --fixed-strings 'Pepper'
+          {
+            echo '## Azure deployment verified'
+            echo
+            echo "- Endpoint: ${APP_URL}/"
+            echo '- Root, About, and dog deep-link checks passed.'
+          } >> "$GITHUB_STEP_SUMMARY"
