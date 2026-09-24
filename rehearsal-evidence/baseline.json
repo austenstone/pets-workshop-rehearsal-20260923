@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-24T03:57:00Z",
+  "sourceRepository": "austenstone/pets-workshop",
+  "sourceCommit": "8630a64a2a739879f022ac69e1c49d80e61cad5f",
+  "sourceTreeEntryCount": 166,
+  "targetRepository": "austenstone/pets-workshop-rehearsal-20260923",
+  "targetInitialCommit": "865657f92b4ac36ec4f826e87b41c66c94959e4b",
+  "targetTreeEntryCount": 166,
+  "treeDifferences": [],
+  "targetVisibility": "public",
+  "templateRepository": "austenstone/pets-workshop",
+  "attendeeWorkflowCount": 0
+}
