@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-24T03:57:30Z",
+  "dependabotAlerts": {
+    "enabled": true,
+    "openAlertCountObserved": 33
+  },
+  "dependabotSecurityUpdates": {
+    "enabled": true
+  },
+  "secretScanning": {
+    "enabled": true,
+    "pushProtectionEnabled": true,
+    "openAlertCount": 0
+  },
+  "codeqlDefaultSetup": {
+    "state": "configured",
+    "querySuite": "default",
+    "languages": [
+      "actions",
+      "javascript-typescript",
+      "python"
+    ],
+    "runId": 35953509507,
+    "runUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35953509507",
+    "conclusion": "success"
+  }
+}
