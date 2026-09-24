@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-09-24T04:31:00Z",
+  "subscriptionId": "408de6dc-726d-4e63-87d3-ef5bbbb30d9e",
+  "tenantId": "398a6654-997b-47e9-b12b-9515b896b4de",
+  "permissionProbe": {
+    "subscriptionMatched": true,
+    "tenantMatched": true,
+    "wildcardActionPresent": true,
+    "ordinaryResourceWritesAllowed": true,
+    "roleAssignmentsWriteAllowed": false,
+    "entraApplicationCreateAllowed": false
+  },
+  "azd": {
+    "version": "1.34.2",
+    "detectedServices": [
+      "app/client",
+      "app/server"
+    ],
+    "generatedAzureYaml": true,
+    "generatedBicep": true,
+    "bicepCompilationSucceeded": true,
+    "localPackageResult": "client built; server blocked by local pack/Docker API version mismatch"
+  },
+  "safeExistingIdentityInventory": {
+    "name": "actions-video-series-github-oidc",
+    "resourceGroup": "actions-video-series-demo",
+    "ownerTag": "austenstone",
+    "role": "Contributor",
+    "scope": "/subscriptions/408de6dc-726d-4e63-87d3-ef5bbbb30d9e/resourceGroups/actions-video-series-demo",
+    "usableForGeneratedAzdDeployment": false,
+    "reason": "Generated infrastructure creates ACR pull role assignments, which require Microsoft.Authorization/roleAssignments/write."
+  },
+  "cleanup": {
+    "temporaryResourceGroup": "rg-astone-pets-rehearsal-identity",
+    "temporaryIdentity": "pets-workshop-rehearsal-oidc",
+    "roleAssignmentsCreated": 0,
+    "temporaryResourceGroupExistsAfterCleanup": false,
+    "sharedIdentityModified": false,
+    "repositoryVariablesCreated": false,
+    "repositorySecretsCreated": false
+  },
+  "status": "blocked",
+  "blockers": [
+    "Microsoft Entra application registration privilege",
+    "Microsoft.Authorization/roleAssignments/write privilege"
+  ]
+}
