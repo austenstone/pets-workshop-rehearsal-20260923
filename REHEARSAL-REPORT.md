@@ -14,7 +14,7 @@
 | 01 Introduction | `5530ff2` | [Hello World](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35953477977) | Create and manually run Hello World. | Manual dispatch succeeded. The `greet` job printed the runner, repository, and actor context and completed in four seconds. | 2 min | ✅ Pass |
 | 02 Code scanning | `51fd7f9` | [CodeQL](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35953509507) | Verify Dependabot, secret scanning/push protection, and enable CodeQL default setup. | Dependabot alerts and security updates were enabled; 33 open dependency alerts were indexed. Secret scanning and push protection were enabled with zero open secret alerts. CodeQL default setup analyzed Actions, JavaScript/TypeScript, and Python successfully. | 3 min | ✅ Pass |
 | 03 Running tests | `1c8b1d8` | [unit-only](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35953647393), [parallel CI](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35953795494) | Unit and Playwright jobs run in parallel on push/PR. | Unit checkpoint passed in 15 seconds. The completed workflow then ran `test-api` and `test-e2e` concurrently; both passed, with the e2e job completing in 55 seconds. | 5 min | ✅ Pass |
-| 04 Caching | Pending | Pending | Pip/npm caches miss, then hit on a subsequent run. | Pending | Pending | ⏳ Pending |
+| 04 Caching | `f429be6` | [cold cache](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35953903515), [warm cache](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35953993863) | Pip/npm caches miss, then hit on a subsequent run. | The push run logged missing pip/npm caches and saved both keys. The manual rerun restored pip in both jobs and npm in e2e from the exact primary keys. Both runs passed. | 4 min | ✅ Pass |
 | 05 Matrix | Pending | Pending | Python 3.12, 3.13, and 3.14 matrix plus e2e all pass. | Pending | Pending | ⏳ Pending |
 | 06 Azure deployment | Pending | Pending | CI-gated OIDC deployment succeeds, endpoint works, and all Azure resources/identity/RBAC are removed afterward. | Pending | Pending | ⏳ Pending |
 | 07 Custom action | Pending | Pending | Composite action seeds one database path and all CI jobs pass. | Pending | Pending | ⏳ Pending |
@@ -27,7 +27,9 @@
 
 ## Blemishes and issues
 
-No blemishes observed yet.
+| # | Classification | Module | Observation | Workaround | Source fix needed |
+|---:|---|---|---|---|---|
+| 1 | Attendee UX rough edge | 04 | The guide says the warm-cache run should be noticeably faster. The warm e2e job took 69 seconds versus 57 seconds cold because Playwright browsers are intentionally not cached and runner/network variance outweighed package-cache savings. Cache-hit logs, not total duration, are the reliable proof. | Compare setup-action logs for exact `Cache hit` and `Cache restored from key` lines. | Yes. Rephrase the timing claim as a possible rather than expected result. |
 
 ## Evidence
 
