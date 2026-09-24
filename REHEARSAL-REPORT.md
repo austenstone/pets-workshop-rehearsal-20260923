@@ -10,7 +10,7 @@
 
 | Module | Commit SHA | Run URL(s) | Expected outcome | Observed outcome | Duration | Status |
 |---|---|---|---|---|---:|---|
-| 00 Setup | Pending next checkpoint | N/A | Public template-generated repository matches the authoritative starter tree and contains no attendee-authored workflows. | Target is public and reports `austenstone/pets-workshop` as its template. Source and target recursive trees contain 166 entries with no differences. The initial commit contains no `.github/workflows/` directory. | 6 min | ✅ Pass |
+| 00 Setup | `6e531c7` | N/A | Public template-generated repository matches the authoritative starter tree and contains no attendee-authored workflows. | Target is public and reports `austenstone/pets-workshop` as its template. Source and target recursive trees contain 166 entries with no differences. The initial commit contains no `.github/workflows/` directory. | 6 min | ✅ Pass |
 | 01 Introduction | Pending | Pending | Create and manually run Hello World. | Pending | Pending | ⏳ Pending |
 | 02 Code scanning | Pending | Pending | Verify Dependabot, secret scanning/push protection, and enable CodeQL default setup. | Pending | Pending | ⏳ Pending |
 | 03 Running tests | Pending | Pending | Unit and Playwright jobs run in parallel on push/PR. | Pending | Pending | ⏳ Pending |
