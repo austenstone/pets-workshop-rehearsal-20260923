@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-24T04:36:00Z",
+  "rulesetId": 23917914,
+  "name": "main-gate",
+  "enforcement": "active",
+  "target": "default branch",
+  "rules": {
+    "pullRequestRequired": true,
+    "requiredApprovals": 0,
+    "requiredStatusCheck": "tests-passed",
+    "strictStatusChecks": true,
+    "forcePushBlocked": true
+  },
+  "validation": {
+    "pullRequestNumber": 12,
+    "pullRequestUrl": "https://github.com/austenstone/pets-workshop-rehearsal-20260923/pull/12",
+    "pendingChecksObserved": true,
+    "finalMergeState": "CLEAN",
+    "testsPassedConclusion": "SUCCESS",
+    "merged": false,
+    "closedAfterValidation": true
+  },
+  "recovery": {
+    "administratorBypassRetained": true,
+    "reason": "Avoid locking out the repository owner while completing explicitly authorized direct workshop checkpoints."
+  }
+}

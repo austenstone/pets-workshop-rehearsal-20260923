@@ -19,7 +19,7 @@
 | 06 Azure deployment | `ca925c9` | Not run | CI-gated OIDC deployment succeeds, endpoint works, and all Azure resources/identity/RBAC are removed afterward. | `azd init --from-code` detected both services, generated `azure.yaml`/Bicep, and local Bicep compilation succeeded. Runtime is blocked: the user lacks Entra app-registration privilege and effective `Microsoft.Authorization/roleAssignments/write`. The safe existing demo UAMI has Contributor only, which cannot create the generated ACR pull assignments. The correct OIDC workflow is retained but disabled to prevent false failing runs. A temporary identity/RG created while testing the permission boundary had zero assignments and was fully deleted. | 22 min | 🛑 Blocked |
 | 07 Custom action | `72391ae` | [composite-action CI](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35955771551) | Composite action seeds one database path and all CI jobs pass. | The composite action resolved an absolute database path, seeded it, and exposed the output to all three API matrix jobs and the Playwright job. All passed. | 4 min | ✅ Pass |
 | 08 Reusable workflows | `32496d2` | [caller-change CI](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35955894391) | Automated and manual callers use one reusable deployment workflow. | GitHub accepted all three workflow definitions; automated and manual callers pass an explicit ref into one reusable workflow. CI remained green. The Azure call itself was not dispatched because Module 06 authentication is blocked. | 3 min | ⚠️ Partial |
-| 09 Rulesets | Pending | Pending | `main-gate` blocks merge until `tests-passed` succeeds without locking out the owner. | Pending | Pending | ⏳ Pending |
+| 09 Rulesets | Pending next checkpoint | [summary check](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35956007531), [ruleset PR #12](https://github.com/austenstone/pets-workshop-rehearsal-20260923/pull/12), [PR CI](https://github.com/austenstone/pets-workshop-rehearsal-20260923/actions/runs/35956199780) | `main-gate` blocks merge until `tests-passed` succeeds without locking out the owner. | Active rules require a PR, an up-to-date branch, and `tests-passed`. PR #12 showed the check pending, then became mergeable only after all CI completed. It was closed without merge. A repository-administrator bypass is retained for recovery and the explicitly authorized remaining direct checkpoints. | 8 min | ✅ Pass |
 | 10 Artifact attestations | Pending | Pending | Real attestation is generated and downloaded artifact verifies with `gh`. | Pending | Pending | ⏳ Pending |
 | 11 Environment gates | Pending | Pending | Production waits on a timer and proceeds without human review. | Pending | Pending | ⏳ Pending |
 | 12 Concurrency | Pending | Pending | Stale preview run is canceled; all serialized production runs are retained. | Pending | Pending | ⏳ Pending |
@@ -41,6 +41,7 @@
 - [`rehearsal-evidence/baseline.json`](rehearsal-evidence/baseline.json)
 - [`rehearsal-evidence/security-settings.json`](rehearsal-evidence/security-settings.json)
 - [`rehearsal-evidence/azure-module.json`](rehearsal-evidence/azure-module.json)
+- [`rehearsal-evidence/ruleset.json`](rehearsal-evidence/ruleset.json)
 
 ## Azure teardown
 
